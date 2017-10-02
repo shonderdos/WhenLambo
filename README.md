@@ -12,3 +12,7 @@ Sell your cryptocurrencies automatically.
 - [ ] Frontend stack
 - [ ] Database model
 - [ ] Websockets
+
+## How to start your lambo
+1. `npm install`
+2. `ng serve --open`
