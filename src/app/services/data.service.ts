@@ -25,4 +25,12 @@ export class DataService {
         return this.trades;
     }
 
+    removeTrade(trade: IntTrade) {
+        this.trades.map((t, i) => {
+            if (t === trade) {
+                this.trades.splice(i, 1);
+            }
+        });
+    }
+
 }
