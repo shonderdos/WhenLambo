@@ -1,4 +1,6 @@
 import {Component, OnInit} from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {DataService} from '../../services/data.service';
 
 @Component({
     selector: 'app-add-trade',
@@ -7,16 +9,27 @@ import {Component, OnInit} from '@angular/core';
 })
 export class AddTradeComponent implements OnInit {
 
-    currencies = [
-        'btc/eth',
-        'btc/etc',
-        'btc/kittehcoin'
-    ];
+    addTrade: FormGroup = this._formBuilder.group(
+        {
+            currencies: ['', Validators.required],
+            sellTarget: ['', Validators.required],
+            stoploss: ['', Validators.required],
+            amount: ['', Validators.required],
+        }
+    );
 
-    constructor() {
+    currencies: string[];
+
+    constructor(private _formBuilder: FormBuilder,
+                private _dataService: DataService) {
     }
 
     ngOnInit() {
+        this.currencies = this._dataService.getCurrencies();
+    }
+
+    onSubmit(formValues) {
+        this._dataService.addTrade(formValues);
     }
 
 }
