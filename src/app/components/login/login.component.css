@@ -1,0 +1,13 @@
+.example-card {
+  width: 400px;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.flex-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
