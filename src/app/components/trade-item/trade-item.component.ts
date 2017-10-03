@@ -1,15 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
+import {IntTrade} from '../../interfaces/trade';
 
 @Component({
-  selector: 'app-trade-item',
-  templateUrl: './trade-item.component.html',
-  styleUrls: ['./trade-item.component.css']
+    selector: 'app-trade-item',
+    templateUrl: './trade-item.component.html',
+    styleUrls: ['./trade-item.component.css']
 })
 export class TradeItemComponent implements OnInit {
 
-  constructor() { }
+    @Input('trade') trade: IntTrade;
 
-  ngOnInit() {
-  }
+    constructor() {
+    }
+
+    ngOnInit() {
+    }
 
 }

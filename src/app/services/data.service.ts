@@ -1,9 +1,10 @@
 import {Injectable} from '@angular/core';
+import {IntTrade} from '../interfaces/trade';
 
 @Injectable()
 export class DataService {
 
-    trades: object[] = [];
+    trades: IntTrade[] = [];
 
     constructor() {
     }
@@ -16,7 +17,7 @@ export class DataService {
         ]
     }
 
-    addTrade(trade) {
+    addTrade(trade: IntTrade) {
         this.trades.push(trade);
     }
 

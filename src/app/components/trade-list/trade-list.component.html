@@ -1,6 +1,33 @@
-<div *ngFor="let trade of trades">
-    <p>{{trade.currencies}}</p>
-    <p>{{trade.sellTarget}}</p>
-    <p>{{trade.stoploss}}</p>
-    <p>{{trade.amount}}</p>
-</div>
+<md-card>
+
+    <md-card-title>All pending trades</md-card-title>
+
+    <md-card-content class="container">
+        <div class="item">
+            <p class="text-bold">Currency</p>
+        </div>
+        <div class="item">
+            <p class="text-bold">Sell target</p>
+        </div>
+        <div class="item">
+            <p class="text-bold">Stoploss</p>
+        </div>
+        <div class="item">
+            <p class="text-bold">Amount</p>
+        </div>
+        <div class="item">
+            <p class="text-bold"></p>
+        </div>
+    </md-card-content>
+
+    <md-card-content *ngIf="trades?.length > 0; else noTrades">
+        <app-trade-item *ngFor="let trade of trades" [trade]="trade"></app-trade-item>
+    </md-card-content>
+
+    <ng-template #noTrades>
+        <md-card-content>
+            <p>You have no pending trades</p>
+        </md-card-content>
+    </ng-template>
+
+</md-card>

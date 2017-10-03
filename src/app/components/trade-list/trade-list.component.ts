@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {DataService} from '../../services/data.service';
+import {IntTrade} from "../../interfaces/trade";
 
 @Component({
   selector: 'app-trade-list',
@@ -8,7 +9,7 @@ import {DataService} from '../../services/data.service';
 })
 export class TradeListComponent implements OnInit {
 
-  trades: object[];
+  trades: IntTrade[];
 
   constructor(private _dataService: DataService) { }
 

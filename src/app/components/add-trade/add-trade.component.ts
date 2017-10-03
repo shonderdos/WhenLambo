@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {DataService} from '../../services/data.service';
+import {IntTrade} from '../../interfaces/trade';
 
 @Component({
     selector: 'app-add-trade',
@@ -28,8 +29,9 @@ export class AddTradeComponent implements OnInit {
         this.currencies = this._dataService.getCurrencies();
     }
 
-    onSubmit(formValues) {
+    onSubmit(formValues: IntTrade) {
         this._dataService.addTrade(formValues);
+        this.addTrade.reset();
     }
 
 }
