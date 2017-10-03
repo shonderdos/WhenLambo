@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+md-select {
+  width: 100%;
+  transform: translateY(-7px);
+}
+
+.item:first-child {
+  margin-left: 0;
+}
+
+.item:last-child {
+  margin-right: 0;
+}
+
+.item {
+  flex-grow: 1;
+  margin: 0 10px;
+}

@@ -1,0 +1,26 @@
+<md-card>
+
+    <md-card-title>Add trade</md-card-title>
+
+    <md-card-content class="container">
+        <div class="item">
+            <md-select placeholder="Currency">
+                <md-option *ngFor="let currency of currencies" [value]="currency">{{ currency }}</md-option>
+            </md-select>
+        </div>
+        <md-form-field class="item">
+            <input mdInput placeholder="Sell target">
+        </md-form-field>
+        <md-form-field class="item">
+            <input mdInput placeholder="Stoploss">
+        </md-form-field>
+        <md-form-field class="item">
+            <input mdInput placeholder="Amount">
+        </md-form-field>
+        <div class="item">
+            <button md-raised-button color="primary">Schedule trade</button>
+        </div>
+    </md-card-content>
+
+
+</md-card>
