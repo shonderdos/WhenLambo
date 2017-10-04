@@ -16,3 +16,4 @@ Sell your cryptocurrencies automatically.
 ## How to start your lambo
 1. `npm install`
 2. `ng serve --open`
+3. `node ./src/node/app.js`
